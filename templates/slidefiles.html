@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <div class="container">
+        <h3 class="text-orange">Slideshow maker:</h3>
+        <form method="POST" action="/slideplayer">
+            <div>
+            <h5>1. Create an outer folder, then a subfolder named 'img' that contains your slide images</h5>
+            </div>
+            <br>
+
+            <div>
+            <h5>2. Place the containing folder in the 'UPLOADS' folder on your desktop</h5>
+            </div>
+            <br>
+
+            <div>
+            <h5>3. Select a college, and enter the course number</h5>
+            {{ form.college }}     {{ form.course }}
+            </div>
+            <br>
+
+            <div>
+            <h5>4. Enter name of the outer slideshow folder</h5>
+            {{ form.slideshowfolder(size=40) }}
+            </div>
+            <br>
+
+            <div>
+            <h5>5. Choose the slide files in the 'img' folder</h5>
+            {{ form.slidefile }}
+            </div>
+            <br>
+
+            <div>
+            <h5>6. Enter the width and height of the images (images should be sized the same)</h5>
+            {{ form.width }}
+            {{ form.height }}
+            </div>
+            <br>
+
+            <div>
+            <h5>7. Would you like a fade transition between slides? (Check box for yes)</h5>
+            {{ form.fadeopt }}
+            </div>
+            <br>
+
+            {{ form.submit() }}
+
+        </form>
+
+    </div>
+    <br>
+    <br>
+</main>
+
+
+{% endblock %}
