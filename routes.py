@@ -24,9 +24,9 @@ app.secret_key = "TEST"
     # retval2 = os.getcwd()
     # files = os.listdir(path)
     #
-    # ftp = FTP('webdev.bu.edu')
-    # ftp.login(user='video', passwd='OnlineBU1960')
-    # ftp.cwd('html_swf_previews/PUBLIC/01_FTP_PLAYLIST_TEST/')
+    # ftp = FTP('*********')
+    # ftp.login(user='*********', passwd='*********')
+    # ftp.cwd('********')
     #
     # x = 0
     #
@@ -53,8 +53,8 @@ app.secret_key = "TEST"
     #         ftp.mkd(f)
     #         return render_template('ftp_test_complete.html', retval2=retval2, files=files, x=x)
     #
-    #     ftp = FTP('webdev.bu.edu')
-    #     ftp.login(user='video', passwd='OnlineBU1960')
+    #     ftp = FTP('*********')
+    #     ftp.login(user='*******', passwd='*******')
     #     ftp.cwd('html_swf_previews/PUBLIC/01_FTP_PLAYLIST_TEST/')
     #
     #     if os.path.isfile(path + r'\{}'.format(f)):
@@ -72,9 +72,9 @@ app.secret_key = "TEST"
 
     # return render_template('ftp_test_complete.html', retval2=retval2, files=files)
 
-    # ftp = FTP('webdev.bu.edu')
-    # ftp.login(user='video', passwd='OnlineBU1960')
-    # ftp.cwd('html_swf_previews/PUBLIC/01_FTP_PLAYLIST_TEST/')
+    # ftp = FTP('*********')
+    # ftp.login(user='*****', passwd='******')
+    # ftp.cwd('*******')
 
     # files = os.listdir(path)
 #     os.chdir(path)
@@ -246,7 +246,7 @@ def codeout_AD():
     file_idlist = []
     for f in files:
         caption_filename = f
-        url_g = 'http://api.3playmedia.com/files?apikey=qPkBhpMQzvvZFJqbAw5MgaWwVMmUZtRX&q=name=%s' % caption_filename
+        url_g = 'http://api.3playmedia.com/files?ap****' % caption_filename
         g = requests.get(url_g)
         response = g.text
         listofdicts = json.loads(response)
@@ -271,12 +271,12 @@ def codeout_AD():
 # @app.route('/codeout', methods=['GET', 'POST'] )
 # def codeout():
 #     #sets up Kaltura API session
-#     partnerId = 2159741
+#     partnerId = ***
 #     config = KalturaConfiguration(2159741)
 #     config.serviceUrl = "https://admin.kaltura.com/"
 #     client = KalturaClient(config)
-#     secret = "2cdc6c22340f7e42345e3f7883d7c354"
-#     userId = "video@bu.edu"
+#     secret = "***"
+#     userId = "****"
 #     ktype = KalturaSessionType.ADMIN
 #     expiry = 432000 # 432000 = 5 days
 #     privileges = "disableentitlement"
@@ -506,12 +506,12 @@ def codeout_AD():
 #     <h3>%s</h3>
 #
 #     <div>
-#     <object id="%s" type="text/html" width="%s" height="%s" data="https://www.bu.edu/av/disted/html_swf_previews/MEDIA_OBJECTS/%s/%s/%s/index.html">
+#     <object id="%s" type="text/html" width="%s" height="%s" data="******.html">
 #     </object>
 #     </div>
 #     <div>
 #     <textarea cols="200" rows="5">
-#     <object id="%s" type="text/html" width="%s" height="%s" data="https://www.bu.edu/av/disted/html_swf_previews/MEDIA_OBJECTS/%s/%s/%s/index.html">
+#     <object id="%s" type="text/html" width="%s" height="%s" data="****.html">
 #     </object>
 #     </textarea>
 #     </div>
@@ -533,9 +533,9 @@ def codeout_AD():
 
     # file = "index.html"
     #
-    # newpath = "html_swf_previews/MEDIA_OBJECTS/%s/%s/slide/" % (college, course)
-    # ftp = FTP('webdev.bu.edu')
-    # ftp.login(user='video', passwd='OnlineBU1960')
+    # newpath = "****" % (college, course)
+    # ftp = FTP('****')
+    # ftp.login(user='****', passwd='****')
     # ftp.cwd(newpath)
     # ftp.storbinary('STOR '+file, open(file, 'rb'))
     # ftp.quit()
@@ -599,7 +599,7 @@ def captions2():
     file_idlist = []
     for f in newfiles:
         caption_filename = f
-        url_g = 'http://api.3playmedia.com/files?apikey=qPkBhpMQzvvZFJqbAw5MgaWwVMmUZtRX&q=name=%s' % caption_filename
+        url_g = 'http://api.3playmedia.com/files?******q=name=%s' % caption_filename
         g = requests.get(url_g)
         response = g.text
         listofdicts = json.loads(response)
@@ -621,7 +621,7 @@ def captions2():
         caption_filename = f
         file_id = file_idlist[i]
         url_p = 'http://api.3playmedia.com/files/%s' % file_id
-        params_p = {'apikey':'qPkBhpMQzvvZFJqbAw5MgaWwVMmUZtRX', 'api_secret_key':'dMkGa_CVlIjL8clh3I3bPfH0EQrgp_w7', '_method':'PUT', 'video_id':'%s' % caption_filename}
+        params_p = {'apikey':'*****', 'api_secret_key':'****', '_method':'PUT', 'video_id':'%s' % caption_filename}
         p = requests.put(url_p, params=params_p)
         i += 1
 
